@@ -1,0 +1,8 @@
+{
+  "name": "MED_Project_Mobile",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "f3ef3ba6"
+}
