@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Camera } from '@ionic-native/camera';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { Toast } from '@ionic-native/toast';
+import { HttpModule } from '@angular/http';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -13,6 +16,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 //Pages 
 import { QrScanPage } from '../pages/qr-scan/qr-scan';
+import { DataServiceProvider } from '../providers/data-service/data-service';
 
 
 @NgModule({
@@ -26,6 +30,7 @@ import { QrScanPage } from '../pages/qr-scan/qr-scan';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp)
+    , HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -40,6 +45,9 @@ import { QrScanPage } from '../pages/qr-scan/qr-scan';
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
     , Camera
+    , BarcodeScanner
+    , Toast,
+    DataServiceProvider
   ]
 })
 export class AppModule { }
